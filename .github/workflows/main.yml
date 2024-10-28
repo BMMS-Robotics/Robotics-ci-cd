@@ -30,6 +30,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
       
+    - name: Accept Android SDK license
+      run: yes | ~/Android/Sdk/tools/bin/sdkmanager --licenses
+      
     - name: Compile and run tests on robot code
       run: ./gradlew build
 
